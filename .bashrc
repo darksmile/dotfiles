@@ -133,4 +133,17 @@ export PATH=$GETGOING_HOME/vpn:$PATH
 export PATH=$HOME/webstorm/bin:$PATH
 export PATH=$GETGOING_HOME/scripts:$PATH
 
-alias emacs='emacs --no-window-system --no-splash'
+export PATH="/home/darksmile/.cask/bin:$PATH"
+
+# alias emacs='emacs --no-window-system --no-splash'
+alias timer='node ~/workspace/darksmile/timer/timer.js'
+
+es() {
+    if [ $1 ]
+        then babel $1 | node
+    fi
+}
+
+wtimer() {
+    sleep $(($1*60)) && notify-send "Timer finished" "$1 minutes left"
+}
